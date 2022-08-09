@@ -1,18 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img  class=" logo-small" alt="Vue logo" src="./assets/logo.jpg">
+
+    <formulario-page @emit-agregar-usuario="addUsuarioTabla"/>
+    <tabla-page :usuarios="usuarios"/>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FormularioPage from './components/FormularioPage.vue'
+import TablaPage from './components/TablaPage.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    FormularioPage,
+    TablaPage
+   
+  },
+  data () {
+    return {
+      
+    }
+  },
+  methods: {
+        addUsuarioTabla(usuario) {
+            console.log(usuario);
+            const nuevoUsuario = {...usuario};
+            this.usuarios.push(nuevoUsuario);
+        }
+        
+
+    }
 }
 </script>
 
@@ -25,4 +45,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.logo-small {
+  width: 80px;
+}
 </style>
+
