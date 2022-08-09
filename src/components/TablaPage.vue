@@ -12,7 +12,7 @@
             </thead>
             <br>
             <tbody>
-                <tr v-for="user in showUsers" :key="user.index">
+                <tr v-for="user in users" :key="user.id">
                     <td> {{user.name}}</td>
                     <td> {{user.email}}</td>
                     <td> {{user.password}}</td>
@@ -34,11 +34,11 @@ export default {
     props: {
     },
     methods: {
-    show () {console.log (this.showUsers)}
+    // show () {console.log (this.showUsers)}
     },
     computed : {
       ...mapGetters ({
-        showUsers: 'showUsers'
+        users: 'showUsers'
       })
     },
 }

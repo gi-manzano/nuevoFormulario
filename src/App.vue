@@ -2,8 +2,10 @@
   <div id="app">
     <img  class=" logo-small" alt="Vue logo" src="./assets/logo.jpg">
 
-    <formulario-page @emit-agregar-usuario="addUsuarioTabla"/>
-    <tabla-page :usuarios="usuarios"/>
+    <formulario-page  class="mb-5"/>
+    <tabla-page />
+
+  
 
   </div>
 </template>
@@ -25,11 +27,11 @@ export default {
     }
   },
   methods: {
-        addUsuarioTabla(usuario) {
-            console.log(usuario);
-            const nuevoUsuario = {...usuario};
-            this.usuarios.push(nuevoUsuario);
-        }
+        // addUsuarioTabla(usuario) {
+        //     console.log(usuario);
+        //     const nuevoUsuario = {...usuario};
+        //     this.usuarios.push(nuevoUsuario);
+        // }
         
 
     }
@@ -44,6 +46,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-color: aquamarine;
+  
 }
 .logo-small {
   width: 80px;

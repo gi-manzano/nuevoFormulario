@@ -2,7 +2,7 @@ import Vuex from 'vuex';
 import Vue from 'vue';
 import axios from 'axios';
 
-Vue.use(Vuex).use(axios);
+Vue.use(Vuex);
 
 export default new Vuex.Store (
     {
@@ -11,7 +11,7 @@ export default new Vuex.Store (
         },
         mutations: {
             SET_USERS (state, response){
-                state.users = response;
+                state.users.push (response);
             }
         },
         actions: {
@@ -22,7 +22,6 @@ export default new Vuex.Store (
                     email: resp.data.email,
                     password: resp.data.password,
                     edad: resp.data.edad
-
                 }
                 contex.commit('SET_USERS', response);
             },
