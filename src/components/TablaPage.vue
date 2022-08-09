@@ -13,13 +13,20 @@
             <br>
             <tbody>
                 <tr v-for="user in users" :key="user.id">
-                    <td> {{user.name}}</td>
+                    <td> {{user.name}} </td> 
                     <td> {{user.email}}</td>
                     <td> {{user.password}}</td>
                     <td> {{ user.edad}}</td> 
-                    <td> <button class="btn btn-warning" @click="deleteRegistro(user)">Eliminar</button> </td>
+                    <br>
+                    
                 </tr>
             </tbody>
+            <tfoot>
+              <tr>
+                <br/>
+                <td> <button class="btn btn-warning" @click="deleteRegistro(user)">Eliminar</button> </td>
+              </tr>
+            </tfoot>
             <br>
         </table>
     </section>
@@ -30,8 +37,11 @@ import {mapGetters} from 'vuex'
 
 export default {
 
-    name: 'tabla-usuarios',
+    name: 'tablaPage',
     props: {
+    },
+    data () {
+      return { }
     },
     methods: {
     // show () {console.log (this.showUsers)}

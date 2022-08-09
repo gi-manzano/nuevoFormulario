@@ -16,7 +16,7 @@ export default new Vuex.Store (
         },
         actions: {
             async postRegister (contex, payload) {
-                let resp = await axios.post (`https://62efbfad57311485d1278ded.mockapi.io/api/products/user`, payload)
+                let resp = await axios.post(`https://62efbfad57311485d1278ded.mockapi.io/api/products/user`, payload)
                 let response = {
                     name: resp.data.name,
                     email: resp.data.email,
